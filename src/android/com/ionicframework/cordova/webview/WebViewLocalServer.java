@@ -195,6 +195,8 @@ public class WebViewLocalServer {
       try {
         if (data.available() == 0) {
           finalStatusCode = 404;
+        } else if (mimeType.startsWith("image/")) {
+          responseHeaders.put("Cache-Control", "max-age=84600, public"); // Trial to allow Chrome to cache images. Profiling shows this can take 200-4000ms when multiple requests are received. If we let Chrome handle the caching, it loads immediatley. Need to be careful of updated images?
         }
       } catch (IOException e) {
         finalStatusCode = 500;
