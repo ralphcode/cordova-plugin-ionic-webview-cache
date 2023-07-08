@@ -29,7 +29,7 @@
             startPath = [stringToLoad stringByReplacingOccurrencesOfString:@"/_app_file_" withString:@""];
         } else {
             startPath = self.basePath ? self.basePath : @"";
-            if ([stringToLoad isEqualToString:@""] || [url.pathExtension isEqualToString:@""]) {
+            if ([stringToLoad isEqualToString:@""]) { // || [url.pathExtension isEqualToString:@""]) { < Allow for zero ext files
                 startPath = [startPath stringByAppendingString:@"/index.html"];
             } else {
                 startPath = [startPath stringByAppendingString:stringToLoad];
