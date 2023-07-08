@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 import android.webkit.ServiceWorkerController;
 import android.webkit.ServiceWorkerClient;
 import android.webkit.WebResourceRequest;
